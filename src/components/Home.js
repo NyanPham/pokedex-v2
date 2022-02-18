@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Filter from './Filter'
 import PokemonCard from './PokemonCard'
 import SearchBar from './SearchBar'
@@ -11,7 +11,8 @@ export default function Home() {
     const { state, dispatch } = usePokemons()
     const { pokemons, nextURL } = state
     const [loading, setLoading] = useState(false)
-    
+    const { searchResults, isSearching } = state
+
     async function fetchMorePokemons() {
         
         try {
@@ -45,7 +46,16 @@ export default function Home() {
             <SearchBar />
             <Filter />
             <div className="mt-3 flex justify-start items-center flex-wrap gap-2">
-                {pokemons?.map((pokemon, index) => (
+                {!isSearching && pokemons?.map((pokemon, index) => (
+                    <PokemonCard
+                        key={`${pokemon.name}_${index}`}
+                        id={pokemon.id}
+                        name={pokemon.name}
+                        imageURL={pokemon.imageURL}
+                        types={pokemon.types}
+                    />
+                ))}
+                {isSearching && searchResults?.map((pokemon, index) => (
                     <PokemonCard
                         key={`${pokemon.name}_${index}`}
                         id={pokemon.id}

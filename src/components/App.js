@@ -6,15 +6,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
 	return (
-		<Router>
-			<PokemonProvider>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/pokemon/:pokemonId" element={<PokemonDetail />} />
-				</Routes>
-			</PokemonProvider>
-		</Router>
-			
+		<div id="pokemon-app">
+			<Router>
+				<PokemonProvider>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/pokemon/:pokemonId" element={<PokemonDetail />} />
+					</Routes>
+				</PokemonProvider>
+			</Router>
+		</div>
 	);
 }
 

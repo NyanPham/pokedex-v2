@@ -8,9 +8,11 @@ export async function formatPokemon(pokemonURL) {
         name: pokemon.name,
         url: pokemonURL,
         imageURL: pokemon.sprites.other['official-artwork'].front_default,
-        types: pokemon.types.map(type => type.type.name)
+        types: pokemon.types.map(type => type.type.name),
+        abilities: pokemon.abilities.map(ability => ability.ability.name)
     }
 }
+
 
 async function getMoves(pokemon) {
     const movesPromises = pokemon.moves.map(move => {
@@ -35,7 +37,10 @@ async function getLocations(pokemonURL) {
     const rawLocations = await fetch(`${pokemonURL}/encounters`)
     const locations = await rawLocations.json()
     return locations.map(location => {
-        return location.location_area.name
+        return {
+            name: location.location_area.name,
+            url: location.location_area.url
+        }
     })
 }
 
@@ -53,8 +58,12 @@ export async function formatPokemonDetail(pokemonURL) {
         weight: pokemon.weight,
         height: pokemon.height,
         stats: pokemon.stats.map(stat => {
+            let statName = stat.stat.name
+            if (stat.stat.name === 'special-attack') statName = 'Sp. Atk'
+            if (stat.stat.name === 'special-defense') statName = 'Sp. Def'
             return {
-                [stat.stat.name]: stat.base_stat
+                name: statName,
+                value: stat.base_stat
             }
         }),
         moves,

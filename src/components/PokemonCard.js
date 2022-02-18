@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export default function PokemonCard({ id, name, imageURL, types }) {
     return (
         <Link to={`/pokemon/${id}`} className="w-36 h-40 p-2 rounded-md shadow-md bg-gray-100 space-y-1 group cursor-pointer inline-block">
-            <h3 className="text-center text-lg text-blue-300">{capitalize(name)}</h3>
+            <h3 className="text-center text-lg text-blue-300">{capitalize(name.split('-')[0])}</h3>
             <div className="w-20 h-20 mx-auto">
                 <img className="w-full max-h-full group-hover:scale-110 transform transition" src={imageURL} alt={`pokemon_${name}`} />
             </div>

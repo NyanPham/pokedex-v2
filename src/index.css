@@ -8,6 +8,23 @@
     0 0 10px;
 }
 
+.bar {
+  --percentage: 0;  
+}
+
+.bar::after {
+    transition: width 700ms ease-in-out;
+    width: calc(var(--percentage) * 1%);
+}
+
+.arrow {
+    border: solid;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

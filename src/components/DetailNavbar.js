@@ -3,7 +3,7 @@ import { capitalize } from '../helper'
 
 export default function DetailNavBar({ active, setActive }) {
     return (
-        <div className="mt-7 w-full flex justify-evenly items-center mx-auto text-lg text-gray-100 font-light">
+        <div className="w-full flex justify-evenly items-center mx-auto text-lg text-gray-100 font-light">
             {['about', 'stats', 'moves', 'locations'].map(detail => (
                 <button 
                     key={detail} 
