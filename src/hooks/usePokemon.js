@@ -137,16 +137,21 @@ export default function PokemonProvider({ children }) {
             })
     }, [dispatch])
 
-    useEffect(async () => {
-        for (let i = 1; i <= TOTAL_POKEMONS; i++) {
-            const pokemon = await formatPokemon(`https://pokeapi.co/api/v2/pokemon/${i}`)
-            dispatch({
-                type: ACTIONS.SET_ALL_POKEMONS,
-                payload: {
-                    pokemon
-                }
-            })
+    useEffect(() => {
+        
+        async function fetchAllPokemons() {
+           for (let i = 1; i <= TOTAL_POKEMONS; i++) {
+                const pokemon = await formatPokemon(`https://pokeapi.co/api/v2/pokemon/${i}`)
+                dispatch({
+                    type: ACTIONS.SET_ALL_POKEMONS,
+                    payload: {
+                        pokemon
+                    }
+                })
+            } 
         }
+        fetchAllPokemons()
+        
     }, [dispatch])
 
     const value = {

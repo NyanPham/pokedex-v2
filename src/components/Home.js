@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Filter from './Filter'
 import PokemonCard from './PokemonCard'
 import SearchBar from './SearchBar'
@@ -37,8 +37,7 @@ export default function Home() {
             alert("There is an error loading more pokemons. Please try again later.")
         }
         
-        setLoading(false)
-        
+        setLoading(false) 
     }
 
     return (

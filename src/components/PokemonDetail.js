@@ -57,7 +57,7 @@ export default function PokemonDetail() {
                 <div className="bg-gray-800 p-5 min-h-screen relative">
                     <Link to="/" className="py-2 px-3 w-max bg-gray-900 text-gray-200 absolute block top-5 left-5 rounded-lg lg:sticky lg:top-7 lg:left-5 hover:bg-gray-700 hover:-translate-y-1 transform transition">Back</Link>
                     <div className="flex flex-col lg:flex-row">
-                        <div className="text-center lg:w-2/5  lg:mt-24 lg:h-screen lg:sticky lg:top-24">
+                        <div className="text-center mt-7 lg:w-2/5  lg:mt-24 lg:h-screen lg:sticky lg:top-24">
                             <h3 className="text-2xl text-gray-100 tracking-wide lg:hidden">{active === 'about' ? IDConverter(pokemon.id) : capitalize(pokemon.name)}</h3>
                             <h3 className="text-2xl text-gray-100 tracking-wide hidden lg:block">{IDConverter(pokemon.id)}</h3>
                             <div className="w-52 mx-auto flex justify-center items-center relative lg:w-3/5">

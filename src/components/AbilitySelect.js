@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { ACTIONS, usePokemons } from '../hooks/usePokemon'
+import { capitalize } from '../helper'
 
 export default function AbilitySelect() {
     const [open, setOpen] = useState(false)
@@ -24,7 +25,7 @@ export default function AbilitySelect() {
     useEffect(() => {
         if (!optionsRef.current) return
         const optionElements = [...optionsRef.current.querySelectorAll('p')]
-        const selectedOptionElement = optionElements.find(element => element.innerText.toLowerCase() === selectedAbility.toLowerCase())
+        const selectedOptionElement = optionElements.find(element => element.dataset.ability.toLowerCase() === selectedAbility.toLowerCase())
         selectedOptionElement?.scrollIntoView({ block: 'nearest' })
     }, [selectedAbility])
 
@@ -103,16 +104,17 @@ export default function AbilitySelect() {
             className="group w-full py-2 px-3 bg-gray-100 rounded-md cursor-pointer flex justify-between items-center"
             onClick={() => setOpen(prevOpen => !prevOpen)}
         >
-            {selectedAbility}
+            {capitalize(selectedAbility.split('-').join(' '))}
             <span className="arrow border-blue-300 rotate-45 group-hover:-translate-y-1 group-hover:shadow-xl group-hover:rotate-45 transform transition"></span>
         </h3>
         <div className={`${open ? 'block' : 'hidden'} w-full h-52 overflow-y-scroll py-2 mt-1 absolute top-7 bg-gray-300 rounded-sm`} ref={optionsRef}>
             {abilities.map(ability => (
                 <p 
                     key={ability}
+                    data-ability={ability}
                     className={`w-full py-1 px-3 hover:bg-blue-300 hover:text-gray-100 cursor-pointer ${ability === selectedAbility ? 'bg-blue-500 text-gray-100' : ''}`}
                     onClick={() => handleOptionClick(ability)}
-                >{ability}</p>
+                >{capitalize(ability.split('-').join(' '))}</p>
             ))}
         </div>
     </div>

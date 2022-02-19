@@ -1,4 +1,3 @@
-import { getPokemons } from "./hooks/usePokemon"
 
 export async function formatPokemon(pokemonURL) {
     const rawData = await fetch(pokemonURL)
