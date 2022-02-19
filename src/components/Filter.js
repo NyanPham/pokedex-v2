@@ -37,7 +37,7 @@ export default function Filter() {
     return (
         <div className="relative z-30">
             <button 
-                className="text-blue-300 mt-3 pb-3 w-full flex gap-2 items-center text-lg cursor-pointer hover:text-blue-400 active:text-blue-500 transition border-b border-b-gray-300"
+                className="text-blue-300 mt-3 pb-3 w-max flex gap-2 items-center text-lg cursor-pointer hover:text-blue-400 active:text-blue-500 transition border-b border-b-gray-300"
                 onClick={() => setOpen(prevOpen => !prevOpen)}
             >
                 <FontAwesomeIcon icon={faSort} />
