@@ -85,7 +85,7 @@ export const TYPES_COLOR_MAP = {
         background: 'bg-gray-900',
         border: 'border-gray-300',
         textOutline: 'text-gray-300',
-        afterColor: 'after:bg-gray-900',
+        afterColor: 'after:bg-gray-700',
         text: 'text-gray-100',
         icon: faMoon
     },
@@ -118,13 +118,13 @@ export const TYPES_COLOR_MAP = {
         border: 'border-teal-300',
         textOutline: 'text-teal-300',
         afterColor: 'after:bg-teal-300',
-        text: 'text-gray-800',
+        text: 'text-gray-100',
         icon: faWandSparkles
     },
     ghost: {
         background: 'bg-gray-700',
-        border: 'border-gray-700',
-        textOutline: 'text-gray-700',
+        border: 'border-gray-600',
+        textOutline: 'text-gray-600',
         afterColor: 'after:bg-gray-700',
         text: 'text-gray-100',
         icon: faGhost
@@ -155,10 +155,10 @@ export const TYPES_COLOR_MAP = {
         icon: faLeaf
     },
     rock: {
-        background: 'bg-stone-500',
-        border: 'border-stone-500',
-        textOutline: 'text-stone-500',
-        afterColor: 'after:bg-stone-500',
+        background: 'bg-stone-300',
+        border: 'border-stone-300',
+        textOutline: 'text-stone-300',
+        afterColor: 'after:bg-stone-300',
         text: 'text-gray-100',
         icon: faGem
     }

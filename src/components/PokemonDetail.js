@@ -79,7 +79,7 @@ export default function PokemonDetail() {
                                                 className={`${borderColor} ${textColor}  bg-transparent outline-none border-2 w-28 h-10 flex justify-center items-center gap-2 rounded-lg lg:w-32 lg:h-12 lg:text-xl`}
                                             >
                                                 <FontAwesomeIcon icon={typeColors?.icon || null} />
-                                                {type} 
+                                                {capitalize(type)} 
                                             </div>
                                 })}
                             </div>
