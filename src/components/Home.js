@@ -45,7 +45,7 @@ export default function Home() {
         <div className="p-4 bg-gray-200 min-h-screen">
             <SearchBar />
             <Filter />
-            <div className="mt-3 flex justify-start items-center flex-wrap gap-2">
+            <div className="mt-3 flex justify-center items-center flex-wrap gap-3">
                 {!isSearching && pokemons?.map((pokemon, index) => (
                     <PokemonCard
                         key={`${pokemon.name}_${index}`}
@@ -65,7 +65,7 @@ export default function Home() {
                     />
                 ))}
             </div>
-            {pokemons.length < TOTAL_POKEMONS && nextURL !== null && (
+            {pokemons.length < TOTAL_POKEMONS && nextURL !== null && !isSearching && (
                 <button 
                     className="p-2 mt-5 text-lg bg-sky-300 text-gray-100 text-center mx-auto block hover:-translate-y-1 hover:shadow-lg transform transition disabled:bg-slate-500"
                     onClick={fetchMorePokemons}

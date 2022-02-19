@@ -6,7 +6,7 @@ import DetailNavbar from './DetailNavbar'
 export default function About({ weight, height, active }) {
     return (
         <>
-            <div className={`${active === 'about' ? 'animate-flyIn': 'hidden' } w-80 p-3 bg-gray-900 mt-7 mx-auto rounded-xl flex flex-row text-gray-100 translate-y-32 opacity-0`}>
+            <div className={`${active === 'about' ? 'animate-flyIn': 'hidden' } w-80 p-3 bg-gray-900 mt-7 mx-auto rounded-xl flex flex-row text-gray-100 translate-y-12 opacity-0`}>
             <div className="grow">
                 <div className="flex text-lg justify-center items-center gap-4 mb-2">
                     <FontAwesomeIcon icon={faWeightScale} className="text-2xl" />

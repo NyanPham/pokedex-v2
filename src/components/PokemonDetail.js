@@ -8,6 +8,7 @@ import DetailNavbar from './DetailNavbar'
 import { TYPES_COLOR_MAP } from './TYPES_MAP'
 import { capitalize, IDConverter, formatPokemonDetail } from '../helper'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PokeBall from '../assets/pokeball.png'
 
 export default function PokemonDetail() {
     const [pokemon, setPokemon] = useState()
@@ -38,7 +39,8 @@ export default function PokemonDetail() {
     return (
         <>
             {pokemon && !loading && (
-                <div className="text-center bg-gray-800 p-5 min-h-screen">
+                <div className="text-center bg-gray-800 p-5 min-h-screen relative">
+                    <Link to="/" className="py-2 px-3 bg-gray-900 text-gray-200 absolute top-5 left-5 rounded-lg hover:bg-gray-700 hover:-translate-y-1 transform transition">Back</Link>
                     <h3 className="text-2xl text-gray-100 tracking-wide">{active === 'about' ? IDConverter(pokemon.id) : capitalize(pokemon.name)}</h3>
                     <div className="w-52 mx-auto relative flex justify-center items-center">
                         <img 
@@ -62,7 +64,7 @@ export default function PokemonDetail() {
                                     </div>
                         })}
                     </div>
-                    <div className={`${active === 'about' ? '' : 'bg-gray-900'} mt-7 w-96 mx-auto py-3 rounded-lg`}>
+                    <div className={`${active === 'about' ? '' : 'bg-gray-900'} mt-7 w-80 mx-auto py-3 rounded-lg sm:w-96`}>
                         <DetailNavbar active={active} setActive={setActive}/>
                         <About weight={pokemon.weight} height={pokemon.height} active={active}/>
                         <Stats stats={pokemon.stats} active={active} type={pokemon.types[0]}/>
@@ -71,7 +73,12 @@ export default function PokemonDetail() {
                     </div>
                 </div>
             )}
-            {loading && <p>Loading...</p>}
+            {loading &&
+                <div className="fixed inset-0 bg-gray-800 flex items-center justify-center">
+                    <div className="w-52 h-52 animate-spinner">
+                        <img className="max-w-full max-h-full" src={PokeBall} alt='Pokeball' />
+                    </div>
+                </div>}
         </>
     )
 }

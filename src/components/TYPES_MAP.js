@@ -38,7 +38,7 @@ export const TYPES_COLOR_MAP = {
         border: 'border-orange-400',
         textOutline: 'text-orange-400',
         afterColor: 'after:bg-orange-400',
-        text: 'text-gray-900',
+        text: 'text-gray-200',
         icon: faHandFist
     },
     ice: {
@@ -62,7 +62,7 @@ export const TYPES_COLOR_MAP = {
         border: 'border-orange-400',
         textOutline: 'text-orange-400',
         afterColor: 'after:bg-orange-400',
-        text: 'text-gray-900',
+        text: 'text-gray-200',
         icon: faDragon
     },
     fire: {
@@ -78,7 +78,7 @@ export const TYPES_COLOR_MAP = {
         border: 'border-orange-400',
         textOutline: 'text-orange-400',
         afterColor: 'after:bg-orange-400',
-        text: 'text-gray-900',
+        text: 'text-gray-200',
         icon: faSquare
     },
     dark: {
@@ -94,7 +94,7 @@ export const TYPES_COLOR_MAP = {
         border: 'border-sky-300',
         textOutline: 'text-sky-300',
         afterColor: 'after:bg-sky-300',
-        text: 'text-gray-800',
+        text: 'text-gray-200',
         icon: faWind
     },
     poison: {
