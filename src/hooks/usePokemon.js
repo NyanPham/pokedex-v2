@@ -40,7 +40,6 @@ export async function getPokemons(url) {
 function reducer(state, { type, payload }) {
     switch (type) {
         case ACTIONS.SET_POKEMONS:
-            console.log('triggered')
             return {
                 ...state,
                 pokemons: [...state.pokemons, ...payload.pokemons]
@@ -81,7 +80,7 @@ function reducer(state, { type, payload }) {
                     checked: false
                 }
             })
-            console.log(resetTypes)
+      
             return {
                 ...state,
                 searchedTypes: resetTypes

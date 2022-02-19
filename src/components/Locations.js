@@ -21,7 +21,7 @@ export default function Locations({ locations, active }) {
     }
     
     return (
-        <div className={`${active === 'locations' ? 'animate-flyIn': 'hidden' } w-72 pt-3 py-3 space-y-5 bg-gray-900 mt-5 mx-auto rounded-xl flex flex-col text-gray-100 translate-y-12 opacity-0 sm:w-80`}>
+        <div className={`${active === 'locations' ? 'animate-flyIn': 'hidden' } w-72 pt-3 py-3 space-y-5 bg-gray-900 mt-5 mx-auto rounded-xl flex flex-col text-gray-100 translate-y-12 opacity-0 sm:w-80 lg:space-y-7`}>
             {locations.length > 0 && locations.map((location, index) => (
                 <p 
                     key={index}

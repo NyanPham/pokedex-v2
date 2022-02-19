@@ -50,10 +50,10 @@ export const TYPES_COLOR_MAP = {
         icon: faIcicles
     },
     shadow: {
-        background: 'bg-gray-800',
-        border: 'border-gray-800',
-        textOutline: 'text-gray-800',
-        afterColor: 'after:bg-gray-800',
+        background: 'bg-gray-600',
+        border: 'border-gray-300',
+        textOutline: 'text-gray-300',
+        afterColor: 'after:bg-gray-600',
         text: 'text-gray-100',
         icon: faCircle
     },
@@ -83,8 +83,8 @@ export const TYPES_COLOR_MAP = {
     },
     dark: {
         background: 'bg-gray-900',
-        border: 'border-gray-900',
-        textOutline: 'text-gray-900',
+        border: 'border-gray-300',
+        textOutline: 'text-gray-300',
         afterColor: 'after:bg-gray-900',
         text: 'text-gray-100',
         icon: faMoon

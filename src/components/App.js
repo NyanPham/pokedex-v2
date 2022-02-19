@@ -1,8 +1,8 @@
 import Home from "./Home";
 import PokemonDetail from './PokemonDetail'
 import PokemonProvider from '../hooks/usePokemon'
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 function App() {
 	return (
