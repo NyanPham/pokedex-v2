@@ -1,6 +1,6 @@
 import { faSort } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import AbilitySelect from './AbilitySelect'
 import { capitalize } from '../helper'
 import { usePokemons, ACTIONS } from '../hooks/usePokemon'
@@ -8,7 +8,6 @@ import { usePokemons, ACTIONS } from '../hooks/usePokemon'
 export default function Filter() {
     const [open, setOpen] = useState(false)
     const { state, dispatch } = usePokemons()
-    const [allPokemons, setAllPokemons] = useState([])
 
     function handleCheckboxChange(e) {
         dispatch({

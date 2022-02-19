@@ -17,17 +17,21 @@ export default function PokemonDetail() {
     const [active, setActive] = useState('about')
     const { pokemonId } = useParams()
 
-    useEffect(async () => {
+    useEffect(() => {
         let isCancel = false
-        try {
-            const pokemonDetail = await formatPokemonDetail(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
-            if (!isCancel) {
-               setPokemon(pokemonDetail) 
+        async function fetchPokemonDetail(pokemonId) {
+            try {
+                const pokemonDetail = await formatPokemonDetail(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+                if (!isCancel) {
+                setPokemon(pokemonDetail) 
+                }
+            } catch {
+                console.log('Failed to load in PokemonDetail')
             }
-        } catch {
-            console.log('Failed to load in PokemonDetail')
         }
         
+        fetchPokemonDetail(pokemonId)
+
         return () => {
             isCancel = true
         }
@@ -50,10 +54,10 @@ export default function PokemonDetail() {
     return (
         <>
             {pokemon && !loading && (
-                <div className="text-center bg-gray-800 p-5 min-h-screen relative">
-                    <Link to="/" className="py-2 px-3 bg-gray-900 text-gray-200 absolute top-5 left-5 rounded-lg hover:bg-gray-700 hover:-translate-y-1 transform transition">Back</Link>
+                <div className="bg-gray-800 p-5 min-h-screen relative">
+                    <Link to="/" className="py-2 px-3 w-max bg-gray-900 text-gray-200 absolute block top-5 left-5 rounded-lg lg:sticky lg:top-7 lg:left-5 hover:bg-gray-700 hover:-translate-y-1 transform transition">Back</Link>
                     <div className="flex flex-col lg:flex-row">
-                        <div className="lg:w-2/5 lg:text-center lg:mt-24 lg:h-screen lg:sticky lg:top-24">
+                        <div className="text-center lg:w-2/5  lg:mt-24 lg:h-screen lg:sticky lg:top-24">
                             <h3 className="text-2xl text-gray-100 tracking-wide lg:hidden">{active === 'about' ? IDConverter(pokemon.id) : capitalize(pokemon.name)}</h3>
                             <h3 className="text-2xl text-gray-100 tracking-wide hidden lg:block">{IDConverter(pokemon.id)}</h3>
                             <div className="w-52 mx-auto flex justify-center items-center relative lg:w-3/5">
