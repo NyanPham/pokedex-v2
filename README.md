@@ -61,7 +61,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Pokedex](Image here)[product-screenshot]](https://amazing-minsky-880311.netlify.app/)
+![pokedex](https://user-images.githubusercontent.com/93678376/154845869-4efb7657-b9bf-4539-8843-35d08c8d5ab6.png)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -70,7 +71,7 @@
 ### Built With
 
 * HTML
-* [CSS
+* CSS
 * JavaScript
 * [React.js](https://reactjs.org/)
 * [Tailwindcss](https://tailwindcss.com/)
@@ -141,6 +142,7 @@ LinkedIn: [https://www.linkedin.com/in/nhan-pham-84a602232/](https://www.linkedi
 ## Acknowledgments
 
 * [PokeAPI](https://pokeapi.co/)
+* [FontAwesome](https://fontawesome.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
